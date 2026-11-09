@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="am" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ | DCITD Official</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Ethiopic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #022c22 0%, #047857 50%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6 space-x-reverse">
+                <span class="flex items-center gap-1.5"><i class="fas fa-phone-alt text-accent-500"></i> +251 948 497 076</span>
+                <span class="flex items-center gap-1.5"><i class="fas fa-envelope text-accent-500"></i> dillacity@gmail.com</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-accent-500"></i> <span data-am="ዲላ፣ ደቡብ ኢትዮጵያ" data-en="Dilla, South Ethiopia">ዲላ፣ ደቡብ ኢትዮጵያ</span></span>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <a href="https://t.me/dtasit2024" target="_blank" class="hover:text-accent-500 transition flex items-center gap-1.5 font-medium">
+                    <i class="fab fa-telegram text-sky-400"></i>
+                    <span>Telegram Channel</span>
+                </a>
+                <span class="text-slate-700">|</span>
+                <a href="https://facebook.com" target="_blank" class="hover:text-amber-400 transition" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/251948497076" target="_blank" class="hover:text-amber-400 transition" title="WhatsApp"><i class="fab fa-whatsapp text-emerald-400"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 glass-header border-b border-slate-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <!-- BRAND LOGO & TITLE -->
+                <a href="#home" class="flex items-center space-x-3 space-x-reverse group">
+                    <div class="w-12 h-12 rounded-2xl overflow-hidden shadow-lg border border-brand-500/30 bg-white flex-shrink-0 group-hover:scale-105 transition-all">
+                        <img src="7253.jpg" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-none" data-am="የዲላ ከተማ አስተዳደር" data-en="Dilla City Administration">የዲላ ከተማ አስተዳደር</h1>
+                        <p class="text-xs text-brand-700 font-bold mt-1 flex items-center gap-1" data-am="ፈጠራና ቴክኖሎጂ መምሪያ" data-en="Innovation & Technology Department">
+                            <span>ፈጠራና ቴክኖሎጂ መምሪያ</span>
+                            <span class="text-[10px] bg-brand-100 text-brand-800 px-1.5 py-0.5 rounded font-extrabold">DCITD</span>
+                        </p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-6 lg:space-x-8 space-x-reverse text-sm font-semibold">
+                    <a href="#home" class="text-brand-700 hover:text-brand-600 transition" data-am="መነሻ" data-en="Home">መነሻ</a>
+                    <a href="#executive-message" class="text-slate-600 hover:text-brand-700 transition" data-am="የኃላፊው መልዕክት" data-en="Executive">የኃላፊው መልዕክት</a>
+                    <a href="#services" class="text-slate-600 hover:text-brand-700 transition" data-am="አገልግሎቶች" data-en="Services">አገልግሎቶች</a>
+                    <a href="#staff" class="text-slate-600 hover:text-brand-700 transition" data-am="አመራሮችና ባለሙያዎች" data-en="Leadership">አመራሮችና ባለሙያዎች</a>
+                    <a href="#contact" class="text-slate-600 hover:text-brand-700 transition" data-am="ያግኙን" data-en="Contact">ያግኙን</a>
+                </div>
+
+                <!-- Language Switcher Button -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <button onclick="toggleLanguage()" class="bg-gradient-to-r from-amber-500 to-accent-600 hover:from-amber-400 hover:to-accent-500 text-slate-950 font-extrabold px-4 py-2 rounded-xl text-xs shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fas fa-globe"></i>
+                        <span id="langBtnText">EN / አማርኛ</span>
+                    </button>
+                    <button id="menu-btn" class="lg:hidden text-slate-700 p-2 rounded-xl hover:bg-slate-100 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 pt-4 pb-6 space-y-3 shadow-xl">
+            <a href="#home" class="block py-2 text-brand-700 font-bold" data-am="መነሻ" data-en="Home">መነሻ</a>
+            <a href="#executive-message" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="የኃላፊው መልዕክት" data-en="Executive">የኃላፊው መልዕክት</a>
+            <a href="#services" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="አገልግሎቶች" data-en="Services">አገልግሎቶች</a>
+            <a href="#staff" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="አመራሮችና ባለሙያዎች" data-en="Leadership">አመራሮችና ባለሙያዎች</a>
+            <a href="#contact" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="ያግኙን" data-en="Contact">ያግኙን</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH SLIDE BANNER -->
+    <header id="home" class="relative hero-gradient text-white py-16 sm:py-24 px-4 overflow-hidden border-b border-brand-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-right">
+                <div class="inline-flex items-center gap-2 bg-brand-900/80 border border-brand-500/30 text-emerald-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                    <span data-am="ዲጂታል ትራንስፎርሜሽን በዲላ ከተማ" data-en="Digital Transformation in Dilla City">ዲጂታል ትራንስፎርሜሽን በዲላ ከተማ</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight text-white" data-am="የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ" data-en="Dilla City Innovation & Technology Department">
+                    የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ
+                </h1>
+                <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-light max-w-2xl mx-auto lg:mr-0" data-am="ተቋማዊ አሰራርን በዲጂታል ቴክኖሎጂ ማዘመን፣ የስልጠና እና የአቅም ግንባታ ስራዎችን ማስፋፋት እና ቀልጣፋ የህዝብ አገልግሎት መስጠት።" data-en="Modernizing municipal operations through ICT infrastructure and technical skill capacity building.">
+                    ተቋማዊ አሰራርን በዲጂታል ቴክኖሎጂ ማዘመን፣ የስልጠና እና የአቅም ግንባታ ስራዎችን ማስፋፋት እና ቀልጣፋ የህዝብ አገልግሎት መስጠት።
+                </p>
+
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#services" class="bg-gradient-to-r from-amber-500 to-accent-600 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-xl hover:scale-[1.02] transition-all flex items-center gap-3">
+                        <span data-am="አገልግሎቶችን ይመልከቱ" data-en="Explore Services">አገልግሎቶችን ይመልከቱ</span>
+                        <i class="fas fa-arrow-down text-sm"></i>
+                    </a>
+                    <a href="https://t.me/dtasit2024" target="_blank" class="bg-slate-900/60 border border-white/20 text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 backdrop-blur-md">
+                        <i class="fab fa-telegram text-sky-400 text-lg"></i>
+                        <span data-am="ቴሌግራም ቻናል" data-en="Telegram Channel">ቴሌግራም ቻናል</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- AUTOMATED BANNER SLIDER -->
+            <div class="lg:col-span-6 relative">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group">
+                    <div id="bannerSlider" class="flex transition-transform duration-700 ease-out w-full">
+                        <!-- Slide 1 -->
+                        <div class="min-w-full relative h-72 sm:h-96">
+                            <img src="6470.jpg" alt="Presentation & Slide" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="bg-brand-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md mb-2 inline-block">DCITD Slide 1</span>
+                                    <h3 class="text-xl font-bold text-white" data-am="የስልጠና እና አቅም ግንባታ አቀራረብ" data-en="Training & Presentation Slide">የስልጠና እና አቅም ግንባታ አቀራረብ</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="min-w-full relative h-72 sm:h-96">
+                            <img src="7265.jpg" alt="Practical Training" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="bg-amber-500 text-slate-950 text-[10px] uppercase font-bold px-2.5 py-1 rounded-md mb-2 inline-block">DCITD Slide 2</span>
+                                    <h3 class="text-xl font-bold text-white" data-am="የተግባር እና የኮምፒውተር ልምምድ" data-en="Practical Lab Session">የተግባር እና የኮምፒውተር ልምምድ</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="min-w-full relative h-72 sm:h-96">
+                            <img src="7262.jpg" alt="Technical Support" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="bg-brand-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md mb-2 inline-block">DCITD Slide 3</span>
+                                    <h3 class="text-xl font-bold text-white" data-am="የጥገና እና ቴክኒክ ድጋፍ ስራዎች" data-en="Maintenance & Technical Support">የጥገና እና ቴክኒክ ድጋፍ ስራዎች</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+                        <button onclick="goToSlide(0)" class="slide-dot w-3 h-3 rounded-full bg-white opacity-100 transition"></button>
+                        <button onclick="goToSlide(1)" class="slide-dot w-3 h-3 rounded-full bg-white opacity-50 transition"></button>
+                        <button onclick="goToSlide(2)" class="slide-dot w-3 h-3 rounded-full bg-white opacity-50 transition"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- EXECUTIVE MESSAGE SECTION -->
+    <section id="executive-message" class="py-24 px-4 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-brand-100" data-am="የተቋሙ አመራር መልዕክት" data-en="Executive Leadership">የተቋሙ አመራር መልዕክት</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-am="የመምሪያ ኃላፊ መልዕክት" data-en="Department Head's Message">የመምሪያ ኃላፊ መልዕክት</h2>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-900 to-brand-950 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-800">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    
+                    <div class="lg:col-span-4 flex flex-col items-center text-center">
+                        <div class="w-60 h-72 sm:w-64 sm:h-80 rounded-2xl overflow-hidden border-4 border-amber-500 shadow-2xl bg-slate-800 flex-shrink-0">
+                            <img src="6655.jpg" alt="ወ/ሮ ፀኃይ ቦጋሌ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-extrabold text-white">ወ/ሮ ፀኃይ ቦጋሌ</h3>
+                            <p class="text-xs text-slate-300 font-medium">Mrs. Tsehay Bogale</p>
+                            <p class="text-xs text-amber-400 font-bold mt-1.5 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20" data-am="የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ ኃላፊ" data-en="Head, Dilla City Innovation & Tech Department">የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ ኃላፊ</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-8 space-y-6 text-slate-200">
+                        <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <blockquote class="text-base sm:text-xl font-light leading-relaxed italic text-white" data-am="«እንኳን ወደ ዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ ኦፊሴላዊ ድረ-ገጽ በሰላም መጣችሁ! ቴክኖሎጂ የዘመናችን የዕድገት እና የቀልጣፋ አገልግሎት አሰጣጥ ዋነኛ መሰረት ነው። መምሪያችን የዲላ ከተማን ነዋሪዎች ህይወት የሚያቀሉ ዲጂታል መፍትሔዎችን በመተግበር፣ የወጣቶችን የፈጠራ ስራ በማበረታታት እና የህዝብ አገልግሎቶችን በማዘመን ላይ በትጋት ይሰራል።»" data-en='"Welcome to the official portal of Dilla City Innovation & Technology Department. Technology is the foundation of modern governance and development. Our department is firmly committed to expanding ICT infrastructure, enhancing technical skills, and executing seamless digital public services."'>
+                            «እንኳን ወደ ዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ ኦፊሴላዊ ድረ-ገጽ በሰላም መጣችሁ! ቴክኖሎጂ የዘመናችን የዕድገት እና የቀልጣፋ አገልግሎት አሰጣጥ ዋነኛ መሰረት ነው። መምሪያችን የዲላ ከተማን ነዋሪዎች ህይወት የሚያቀሉ ዲጂታል መፍትሔዎችን በመተግበር፣ የወጣቶችን የፈጠራ ስራ በማበረታታት እና የህዝብ አገልግሎቶችን በማዘመን ላይ በትጋት ይሰራል።»
+                        </blockquote>
+                        <p class="text-sm text-slate-300 leading-relaxed pt-2 border-t border-white/10" data-am="በቀጣይም ከተማችንን የቴክኖሎጂና የስማርት ሲቲ (Smart City) ማዕከል ለማድረግ ከተለያዩ ባለድርሻ አካላት እና ከቴክኖሎጂ ባለሙያዎቻችን ጋር ተቀናጅተን የምንሰራ ይሆናል።»" data-en='We will continue partnering with key stakeholders, software engineers, and administrative teams to position Dilla City as a hub of technological innovation and modern public operations."'>
+                            በቀጣይም ከተማችንን የቴክኖሎጂና የስማርት ሲቲ (Smart City) ማዕከል ለማድረግ ከተለያዩ ባለድርሻ አካላት እና ከቴክኖሎጂ ባለሙያዎቻችን ጋር ተቀናጅተን የምንሰራ ይሆናል።»
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <span class="bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full" data-am="አገልግሎቶቻችን" data-en="Our Services">አገልግሎቶቻችን</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-am="የምንሰጣቸው ዋና ዋና አገልግሎቶች" data-en="Key Department Services">የምንሰጣቸው ዋና ዋና አገልግሎቶች</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Service 1: Training -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-md flex flex-col justify-between space-y-6 hover:shadow-xl transition-shadow">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-brand-700 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-brand-700/20">
+                            <i class="fas fa-chalkboard-user"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900" data-am="1. የስልጠና እና አቅም ግንባታ አገልግሎት" data-en="1. Training & Capacity Building">1. የስልጠና እና አቅም ግንባታ አገልግሎት</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed" data-am="በዳታቤዝ አስተዳደር (Database Administration - Level 1)፣ በኮምፒውተር መሰረታዊ እውቀት እና ሶፍትዌር አጠቃቀም ዙሪያ ለባለሙያዎችና ወጣቶች ተግባራዊ ስልጠና መስጠት።" data-en="Delivering practical ICT, Database Administration (Level 1), and software management training programs to build digital competency.">
+                            በዳታቤዝ አስተዳደር (Database Administration - Level 1)፣ በኮምፒውተር መሰረታዊ እውቀት እና ሶፍትዌር አጠቃቀም ዙሪያ ለባለሙያዎችና ወጣቶች ተግባራዊ ስልጠና መስጠት።
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold text-slate-500 uppercase" data-am="የስልጠና ፎቶዎች" data-en="Training Photos">የስልጠና ፎቶዎች</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="h-32 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+                                <img src="6470.jpg" alt="Training Presentation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'">
+                            </div>
+                            <div class="h-32 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+                                <img src="7265.jpg" alt="Practical Training" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Maintenance -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-md flex flex-col justify-between space-y-6 hover:shadow-xl transition-shadow">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-amber-500 text-slate-950 rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-500/20">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900" data-am="2. የጥገና እና ቴክኒክ ድጋፍ አገልግሎት" data-en="2. Maintenance & Tech Support">2. የጥገና እና ቴክኒክ ድጋፍ አገልግሎት</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed" data-am="የከተማ አስተዳደሩን የኮምፒውተር ሃርድዌር፣ የኔትወርክ ዝርጋታ፣ የሶፍትዌር ችግሮች እና የጽህፈት ቤት መሳሪያዎች ጥገና እና ቴክኒካዊ ድጋፍ መስጠት።" data-en="Providing comprehensive hardware repair, network infrastructure setup, and ongoing IT support for administrative offices.">
+                            የከተማ አስተዳደሩን የኮምፒውተር ሃርድዌር፣ የኔትወርክ ዝርጋታ፣ የሶፍትዌር ችግሮች እና የጽህፈት ቤት መሳሪያዎች ጥገና እና ቴክኒካዊ ድጋፍ መስጠት።
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold text-slate-500 uppercase" data-am="የጥገና ስራዎች" data-en="Maintenance Operations">የጥገና ስራዎች</p>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="h-24 rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                                <img src="7262.jpg" alt="Maintenance 1" class="w-full h-full object-cover hover:scale-110 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80'">
+                            </div>
+                            <div class="h-24 rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                                <img src="7260.jpg" alt="Maintenance 2" class="w-full h-full object-cover hover:scale-110 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80'">
+                            </div>
+                            <div class="h-24 rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                                <img src="7263.jpg" alt="Maintenance 3" class="w-full h-full object-cover hover:scale-110 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP & TEAM SECTION -->
+    <section id="staff" class="py-24 px-4 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <span class="bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-brand-100" data-am="ተቋማዊ መዋቅር" data-en="Organizational Leadership">ተቋማዊ መዋቅር</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-am="የመምሪያው አመራሮችና የቡድን መሪዎች" data-en="Department Leaders & Team Leads">የመምሪያው አመራሮችና የቡድን መሪዎች</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Head: Tsehay Bogale -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all border-t-4 border-t-amber-500 space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-amber-500 bg-slate-200 flex-shrink-0">
+                            <img src="6655.jpg" alt="Tsehay Bogale" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80'">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-amber-500/10 text-amber-700 px-2.5 py-0.5 rounded-full" data-am="የመምሪያ ኃላፊ" data-en="Department Head">የመምሪያ ኃላፊ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">ወ/ሮ ፀኃይ ቦጋሌ</h3>
+                            <p class="text-xs text-slate-500 font-medium">Tsehay Bogale</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-brand-800 font-bold border-t border-slate-200/60 pt-3" data-am="የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ ኃላፊ" data-en="Head, Dilla City Innovation & Technology Department">የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ ኃላፊ</p>
+                </div>
+
+                <!-- 1. Zufanwork Bre -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fas fa-users-gear"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full" data-am="የቡድን መሪ" data-en="Team Leader">የቡድን መሪ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">ወ/ሮ ዙፋንወርቅ ብሬ</h3>
+                            <p class="text-xs text-slate-500 font-medium">Zufanwork Bre</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-700 font-bold border-t border-slate-200/60 pt-3" data-am="የሰው-ሀብት አስተዳደር ልማት ቡድን መሪ" data-en="Human Resource Management & Development Team Leader">የሰው-ሀብት አስተዳደር ልማት ቡድን መሪ</p>
+                </div>
+
+                <!-- 2. Yamikelshen Girma -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-purple-50 text-purple-700 px-2.5 py-0.5 rounded-full" data-am="የቡድን መሪ" data-en="Team Leader">የቡድን መሪ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">ወ/ሮ የሚኬልሰን ግርማ</h3>
+                            <p class="text-xs text-slate-500 font-medium">Yamikelshen Girma</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-700 font-bold border-t border-slate-200/60 pt-3" data-am="የኢንፎርሜሽን ኮሙኒኬሽን ቡድን መሪ" data-en="Information Communication Team Leader">የኢንፎርሜሽን ኮሙኒኬሽን ቡድን መሪ</p>
+                </div>
+
+                <!-- 3. Muluqeni Kabada -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-brand-500 bg-slate-200 flex-shrink-0">
+                            <img src="7259_3a9dde.jpg" alt="Muluqeni Kabada" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80'">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-brand-50 text-brand-700 px-2.5 py-0.5 rounded-full" data-am="የቡድን መሪ" data-en="Team Leader">የቡድን መሪ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">አቶ ሙሉቀን ከበደ</h3>
+                            <p class="text-xs text-slate-500 font-medium">Muluqeni Kabada</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-700 font-bold border-t border-slate-200/60 pt-3" data-am="የሳይንስና ቴክኖሎጂ ፈጠራ ስራዎች ድጋፍ ክትትልና አቅም ግንባታ ቡድን መሪ" data-en="Science & Tech Innovation Support, Monitoring & Capacity Building Team Leader">የሳይንስና ቴክኖሎጂ ፈጠራ ስራዎች ድጋፍ ክትትልና አቅም ግንባታ ቡድን መሪ</p>
+                </div>
+
+                <!-- 4. Amanuel Samuel -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-brand-500 bg-slate-200 flex-shrink-0">
+                            <img src="17942114265945481305337284900661_3a9a7c.jpg" alt="Amanuel Samuel" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80'">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-brand-50 text-brand-700 px-2.5 py-0.5 rounded-full" data-am="የቡድን መሪ" data-en="Team Leader">የቡድን መሪ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">አቶ አማኑኤል ሳሙኤል</h3>
+                            <p class="text-xs text-slate-500 font-medium">Amanuel Samuel Eriba</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-700 font-bold border-t border-slate-200/60 pt-3" data-am="የሶፍት ዌር ሲስተም ቡድን መሪ" data-en="Software System Team Leader">የሶፍት ዌር ሲስተም ቡድን መሪ</p>
+                </div>
+
+                <!-- 5. Shetaye Banta -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fas fa-folder-tree"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full" data-am="የአገልግሎት ኃላፊ" data-en="Service Head">የአገልግሎት ኃላፊ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">ወ/ሮ ሸታዬ ባንታ</h3>
+                            <p class="text-xs text-slate-500 font-medium">Shetaye Banta</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-700 font-bold border-t border-slate-200/60 pt-3" data-am="የሬኮርድና ማህደር ስራ አመራር አገልግሎት ኃላፊ I" data-en="Record & Archive Management Service Head I">የሬኮርድና ማህደር ስራ አመራር አገልግሎት ኃላፊ I</p>
+                </div>
+
+                <!-- 6. Solomon Siyum -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70 shadow-sm hover:shadow-md transition-all space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold uppercase bg-amber-50 text-amber-800 px-2.5 py-0.5 rounded-full" data-am="የቡድን መሪ" data-en="Team Leader">የቡድን መሪ</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">አቶ ሰለሞን ስዩም</h3>
+                            <p class="text-xs text-slate-500 font-medium">Solomon Siyum</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-700 font-bold border-t border-slate-200/60 pt-3" data-am="የዕቅድና በጀት ዝግጅት/ግምገማ/ቡድን መሪ" data-en="Planning, Budget Preparation & Evaluation Team Leader">የዕቅድና በጀት ዝግጅት/ግምገማ/ቡድን መሪ</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contact" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-3">
+                        <span class="bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full" data-am="አድራሻና ቦታ" data-en="Location & Contact">አድራሻና ቦታ</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900" data-am="እኛን ያግኙን" data-en="Contact & Locate Us">እኛን ያግኙን</h2>
+                        <p class="text-slate-600 text-sm leading-relaxed" data-am="ለማንኛውም ጥያቄ፣ አስተያየት ወይም ቴክኒካዊ ድጋፍ በቀጣዮቹ አድራሻዎችና በቢሮአችን አድራሻ ያግኙን።" data-en="Reach out to us for any inquiries, technical assistance, or visit our official office in Dilla.">
+                            ለማንኛውም ጥያቄ፣ አስተያየት ወይም ቴክኒካዊ ድጋፍ በቀጣዮቹ አድራሻዎችና በቢሮአችን አድራሻ ያግኙን።
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900" data-am="የቢሮ አድራሻ" data-en="Office Location">የቢሮ አድራሻ</h4>
+                                <p class="text-xs text-slate-600" data-am="ዲላ ከተማ አስተዳደር ህንፃ፣ ደቡብ ኢትዮጵያ" data-en="Dilla City Administration Building, South Ethiopia">ዲላ ከተማ አስተዳደር ህንፃ፣ ደቡብ ኢትዮጵያ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900" data-am="ስልክ ቁጥር" data-en="Phone">ስልክ ቁጥር</h4>
+                                <p class="text-xs text-slate-600">+251 948 497 076</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900" data-am="ኢሜይል" data-en="Email">ኢሜይል</h4>
+                                <p class="text-xs text-slate-600">dillacity@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                        <h4 class="font-bold text-sm text-slate-900" data-am="ማህበራዊ ሚዲያ" data-en="Social Media">ማህበራዊ ሚዲያ</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://t.me/dtasit2024" target="_blank" class="flex items-center gap-2 bg-sky-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-sky-600 transition shadow-sm">
+                                <i class="fab fa-telegram text-base"></i> Telegram
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="flex items-center gap-2 bg-blue-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-blue-700 transition shadow-sm">
+                                <i class="fab fa-facebook-f text-base"></i> Facebook
+                            </a>
+                            <a href="https://wa.me/251948497076" target="_blank" class="flex items-center gap-2 bg-emerald-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-emerald-700 transition shadow-sm">
+                                <i class="fab fa-whatsapp text-base"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Working Contact Form with WhatsApp Integration -->
+                <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-md">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2" data-am="መልእክት ይላኩልን" data-en="Send Us a Message">መልእክት ይላኩልን</h3>
+                    <p class="text-xs text-slate-500 mb-6" data-am="የሚልኩት መልእክት በቀጥታ ወደ መምሪያው ዎችአፕ ይደርሳል" data-en="Your message will be sent directly to department WhatsApp">የሚልኩት መልእክት በቀጥታ ወደ መምሪያው ዎችአፕ ይደርሳል</p>
+                    
+                    <form onsubmit="sendToWhatsApp(event)" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5" data-am="ሙሉ ስም" data-en="Full Name">ሙሉ ስም</label>
+                            <input type="text" id="senderName" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50" placeholder="ስምዎን ያስገቡ">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5" data-am="ኢሜይል ወይም ስልክ ቁጥር" data-en="Email or Phone">ኢሜይል ወይም ስልክ ቁጥር</label>
+                            <input type="text" id="senderContact" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50" placeholder="ኢሜይል ወይም ስልክ">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5" data-am="መልእክት" data-en="Message">መልእክት</label>
+                            <textarea id="senderMessage" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50" placeholder="መልእክትዎን እዚህ ይጻፉ..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-brand-800 text-white font-extrabold py-4 rounded-xl hover:from-emerald-700 hover:to-brand-900 transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl text-emerald-300"></i>
+                            <span data-am="በ WhatsApp መልእክት ላክ" data-en="Send via WhatsApp">በ WhatsApp መልእክት ላክ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200/80 shadow-md space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-brand-50 text-brand-700 rounded-xl flex items-center justify-center text-base">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg" data-am="የዲላ ከተማ ካርታ ቦታ" data-en="Dilla City Location Map">የዲላ ከተማ ካርታ ቦታ</h3>
+                        <p class="text-xs text-slate-500" data-am="የጽህፈት ቤታችን መገኛ በዲላ ከተማ አስተዳደር ህንፃ" data-en="Find our office at Dilla City Administration Premises">የጽህፈት ቤታችን መገኛ በዲላ ከተማ አስተዳደር ህንፃ</p>
+                    </div>
+                </div>
+                <div class="w-full h-80 rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15822.427764101416!2d38.2987!3d6.4111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b1897c9c0b112d%3A0x8e063bb77b5839b!2sDilla!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-white py-12 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto text-center space-y-4">
+            <div class="flex justify-center space-x-6 text-lg text-slate-400">
+                <a href="https://t.me/dtasit2024" target="_blank" class="hover:text-sky-400 transition" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="hover:text-blue-500 transition" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/251948497076" target="_blank" class="hover:text-emerald-400 transition" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="font-bold text-sm text-slate-200" data-am="የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ (DCITD)" data-en="Dilla City Innovation & Technology Department (DCITD)">የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ (DCITD)</p>
+            <p class="text-xs text-slate-500">&copy; 2026 DCITD Official Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Banner Slide Logic
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slider = document.getElementById('bannerSlider');
+        const dots = document.querySelectorAll('.slide-dot');
+
+        function updateSlider() {
+            if (slider) {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('opacity-100', index === currentSlide);
+                    dot.classList.toggle('opacity-50', index !== currentSlide);
+                });
+            }
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // WhatsApp Direct Message Sender
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const contact = document.getElementById('senderContact').value;
+            const msg = document.getElementById('senderMessage').value;
+
+            const text = `ሰላም! ከዲላ ከተማ ቴክኖሎጂ መምሪያ ዌብሳይት የተላከ መልእክት፡\n\nስም: ${name}\nአድራሻ/ስልክ: ${contact}\nመልእክት: ${msg}`;
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/251948497076?text=${encodedText}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Language Switcher
+        let currentLang = 'am';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'am' ? 'en' : 'am';
+            const elements = document.querySelectorAll('[data-am]');
+            
+            elements.forEach(el => {
+                const newText = el.getAttribute(`data-${currentLang}`);
+                if (newText) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = newText;
+                    } else {
+                        el.innerText = newText;
+                    }
+                }
+            });
+
+            document.getElementById('langBtnText').innerText = currentLang === 'am' ? 'EN / አማርኛ' : 'አማርኛ / EN';
+        }
+
+        // Mobile Menu toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
